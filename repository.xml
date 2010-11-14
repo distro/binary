@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE repository [
-    <!ELEMENT repository (mirrors, packages)>
+    <!ELEMENT repository (ANY)>
     <!ATTLIST repository
         version CDATA   #REQUIRED
         name    CDATA   #REQUIRED
@@ -11,8 +11,12 @@
     <!ELEMENT mirrors (mirror*)>
         <!ELEMENT mirror (#PCDATA)>
 
-    <!ELEMENT packages (package*)>
-        <!ELEMENT package>
+    <!ELEMENT packages (ANY)>
+      <!ELEMENT package (build*)>
+      <!ATTLIST package
+        name  CDATA #REQUIRED
+      >
+        <!ELEMENT build (flavors?, features?)>
 ]>
 
 <repository version="1.0" name="universe" type="binary">
@@ -21,6 +25,29 @@
     </mirrors>
 
     <packages>
-        
+        <system>
+            <applications>
+                <package name="coreutils" description="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)" homepage="http://www.gnu.org/software/coreutils/" license="GPL-3">
+                    <build version="8.6">
+                        <flavors>vanilla</flavors>
+                    </build>
+                </package>
+            </applications>
+
+            <development>
+                <package name="gcc" description="The GNU Compiler Collection" homepage="http://gcc.gnu.org/" license="GPL-3 LGPL-3">
+                    <slot version="4.4">
+                        <build version="4.4.3">
+                            <flavors>vanilla</flavors>
+                        </build>
+
+                        <build version="4.4.3">
+                            <features>nls</features>
+                            <flavors>headers documentation</flavors>
+                        </build>
+                    </slot>
+                </package>
+            </development>
+        </system>
     </packages>
 </repository>
