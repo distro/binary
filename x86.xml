@@ -21,14 +21,14 @@
 
 <repository version="1.0" name="universe" type="binary">
     <mirrors>
-
+      <mirror>http://localhost:81/universe</mirror>
     </mirrors>
 
     <packages>
         <system>
             <applications>
                 <package name="coreutils" description="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)" homepage="http://www.gnu.org/software/coreutils/" license="GPL-3">
-                    <build version="8.6">
+                    <build version="8.5" digest="430696d741c7924dc6a56b86fa7e3d100c2eb8e7">
                         <flavors>vanilla</flavors>
                     </build>
                 </package>
