@@ -19,7 +19,7 @@
         <!ELEMENT build (flavors?, features?)>
 ]>
 
-<repository version="1.0" name="universe" type="binary">
+<repository version="1.0" name="universe-core2" type="binary">
     <mirrors>
       <mirror>http://localhost:81/universe</mirror>
     </mirrors>
@@ -28,23 +28,27 @@
         <system>
             <applications>
                 <package name="coreutils" description="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)" homepage="http://www.gnu.org/software/coreutils/" license="GPL-3">
-                    <build version="8.5" digest="430696d741c7924dc6a56b86fa7e3d100c2eb8e7">
-                        <flavors>vanilla</flavors>
-                    </build>
+                    <version name="8.5" features="acl caps gmp nls xattr">
+                        <build digest="1abb6aa9c2472629fb1cd315d2ffbcb1d78dd3cc">
+                            <flavors>vanilla</flavors>
+                        </build>
+                    </version>
                 </package>
             </applications>
 
             <development>
                 <package name="gcc" description="The GNU Compiler Collection" homepage="http://gcc.gnu.org/" license="GPL-3 LGPL-3">
-                    <slot version="4.4">
-                        <build version="4.4.3">
-                            <flavors>vanilla</flavors>
-                        </build>
+                    <slot name="4.4">
+                        <version name="4.4.3" features="nls">
+                            <build>
+                                <flavors>vanilla</flavors>
+                            </build>
 
-                        <build version="4.4.3">
-                            <features>nls</features>
-                            <flavors>headers documentation</flavors>
-                        </build>
+                            <build>
+                                <features>nls</features>
+                                <flavors>headers documentation</flavors>
+                            </build>
+                        </version>
                     </slot>
                 </package>
             </development>
