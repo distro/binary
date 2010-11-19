@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!DOCTYPE repository [
-    <!ELEMENT repository (ANY)>
-    <!ATTLIST repository
-        version CDATA   #REQUIRED
-        name    CDATA   #REQUIRED
-        type    CDATA   #REQUIRED
-    >
-
-    <!ELEMENT mirrors (mirror*)>
-        <!ELEMENT mirror (#PCDATA)>
-
-    <!ELEMENT packages (ANY)>
-      <!ELEMENT package (build*)>
-      <!ATTLIST package
-        name  CDATA #REQUIRED
-      >
-        <!ELEMENT build (flavors?, features?)>
-]>
-
 <repository version="1.0" name="universe-core2" type="binary">
     <mirrors>
       <mirror>http://localhost:81/universe</mirror>
