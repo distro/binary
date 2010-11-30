@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<repository version="1.0" name="universe-core2" type="binary">
+<repository version="1.0" name="universe-linux-core2" type="binary">
     <mirrors>
-      <mirror>http://localhost:81/universe</mirror>
+      <mirror>http://localhost:81/universe/linux</mirror>
     </mirrors>
 
     <packages>
-        <package tags="application system" name="coreutils" description="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)" homepage="http://www.gnu.org/software/coreutils/" license="GPL-3">
+        <package tags="application system utility" name="coreutils">
+            <description>Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)</description>
+            <homepage>http://www.gnu.org/software/coreutils/</homepage>
+            <license>GPL-3</license>
+
             <version name="8.5" features="acl caps gmp nls xattr">
                 <build>
                     <flavor>vanilla</flavor>
@@ -14,7 +18,11 @@
             </version>
         </package>
 
-        <package tags="application compiler system development" name="gcc" description="The GNU Compiler Collection" homepage="http://gcc.gnu.org/" license="GPL-3 LGPL-3">
+        <package tags="application compiler system development" name="gcc">
+            <description>The GNU Compiler Collection</description>
+            <homepage>http://gcc.gnu.org/</homepage>
+            <license>GPL-3 LGPL-3</license>
+
             <slot name="4.4">
                 <version name="4.4.3" features="nls">
                     <build>
