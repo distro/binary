@@ -1,37 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <repository version="1.0" name="universe-linux-core2" type="binary">
     <mirrors>
-      <mirror>http://localhost:81/universe/linux</mirror>
+        <mirror>http://localhost:81/universe/linux</mirror>
     </mirrors>
-
     <packages>
-        <package tags="application system utility" name="coreutils">
-            <description>Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)</description>
-            <homepage>http://www.gnu.org/software/coreutils/</homepage>
-            <license>GPL-3</license>
-
-            <version name="8.5" features="acl caps gmp nls xattr">
+        <package tags="application system" name="sandbox">
+            <description>Gentoo's sandbox utility for more secure package building</description>
+            <homepage>http://www.gentoo.org/</homepage>
+            <license>GPL-2</license>
+            <version name="2.4">
+                <build>
+                    <flavor>vanilla</flavor>
+                    <digest>09ae9e6001ccc8b8828f63b212f921c13ed1895c</digest>
+                </build>
+            </version>
+        </package>
+        <package tags="application system" name="fakeroot">
+            <description>Run commands in an environment faking root privileges</description>
+            <homepage>http://packages.qa.debian.org/f/fakeroot.html</homepage>
+            <license>GPL-2</license>
+            <version name="1.14.5">
                 <build>
                     <flavor>vanilla</flavor>
                 </build>
             </version>
         </package>
-
-        <package tags="application compiler system development" name="gcc">
+        <package tags="application system" name="installwatch">
+            <description>Installwatch is an extremely simple utility to keep track of created and modified files during the installation of a new program</description>
+            <homepage>http://asic-linux.com.mx/~izto/checkinstall/installwatch.html</homepage>
+            <license>GPL-2</license>
+            <version name="0.7.0beta7">
+                <build>
+                    <flavor>vanilla</flavor>
+                </build>
+            </version>
+        </package>
+        <package tags="application system utility gnu" name="coreutils">
+            <description>Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)</description>
+            <homepage>http://www.gnu.org/software/coreutils/</homepage>
+            <license>GPL-3</license>
+            <version name="8.5" features="acl caps gmp nls xattr">
+                <build>
+                    <flavor>vanilla</flavor>
+                    <digest>3bb38898c4ec3b1286dfc04b56f55e768405f217</digest>
+                </build>
+            </version>
+        </package>
+        <package tags="application compiler system development gnu" name="gcc">
             <description>The GNU Compiler Collection</description>
             <homepage>http://gcc.gnu.org/</homepage>
             <license>GPL-3 LGPL-3</license>
-
             <slot name="4.4">
-                <version name="4.4.3" features="nls">
+                <version name="4.4.5" features="ada cxx fortran java objc objcxx optimizations nls">
                     <build>
                         <flavor>vanilla</flavor>
+                        <features>cxx optimizations</features>
+                        <digest>0a8aa70d78790c3640cb231a82eed9b68255526e</digest>
                     </build>
-
+                </version>
+            </slot>
+            <slot name="4.5">
+                <version name="4.5.2" features="ada cxx fortran java objc objcxx optimizations nls">
                     <build>
-                        <features>nls</features>
-                        <flavor>headers documentation</flavor>
+                        <flavor>vanilla</flavor>
+                        <features>cxx optimizations</features>
+                        <digest>6eefbbd0acbb53bc2f1aac7a2173fba9f276d6af</digest>
                     </build>
                 </version>
             </slot>
