@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository version="1.0" name="universe-linux-core2" type="binary">
+<repository version="1.0" name="universe/linux/core2" type="binary">
     <mirrors>
         <mirror>http://localhost:81/universe/linux</mirror>
     </mirrors>
